@@ -1,5 +1,5 @@
+import Header from "@/components/Header";
 import Providers from "@/components/Providers";
-import { Divider } from "@nextui-org/divider";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
@@ -20,19 +20,10 @@ export default function RootLayout({
     <html lang="en" className=" dark">
       <body className={font.className}>
         <Providers>
-          <div className=" flex min-h-[100dvh] flex-col">
-            <header className=" grid h-16 flex-none place-items-center p-4">
-              Header
-            </header>
-            <Divider />
-            <main className=" grid flex-grow place-items-center p-4">
-              {children}
-            </main>
-            <Divider />
-            <footer className=" grid h-16 flex-none place-items-center p-4">
-              Footer
-            </footer>
-          </div>
+          <Header />
+          <main className=" grid min-h-[calc(100dvh_-_3.75rem)] place-content-center place-items-center gap-8 p-4">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
